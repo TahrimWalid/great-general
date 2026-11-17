@@ -113,7 +113,7 @@ flowchart LR
     W -->|general changed| I[📬 Issue opened<br/>files · flags · patch]
     W -->|repo moved, general unchanged| S[skip]
     I --> V[👤 You vet<br/>+ fresh reviewer agent]
-    V -->|accept| P[approve --by you<br/>commit · push]
+    V -->|accept| P[approve --by you<br/>branch · pull request · merge]
     V -->|reject| K[keep current pin]
     P --> C[✅ Issue auto-closes]
 ```

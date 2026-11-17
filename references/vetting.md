@@ -28,6 +28,7 @@ python3 scripts/generals.py check-updates                 # which pins are behin
 python3 scripts/generals.py diff --id <id> --to HEAD      # changed files + risk flags on the changed files only + a patch
 # reviewer agent reads changes.diff + diff.json; human approves or leaves the pin where it is
 python3 scripts/generals.py approve --id <id> --commit <new sha> --by "<your name>" --note "<summary>"
+# commit generals.lock.json + vetting-log.jsonl on a branch and merge it through a pull request
 ```
 
 In a GitHub copy of this skill, `.github/workflows/watch-generals.yml` does the check-and-diff step daily and opens one issue per real update (`scripts/watch_generals.py`), so you don't have to remember to look. Vetting and approval stay manual.

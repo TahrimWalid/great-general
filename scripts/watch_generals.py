@@ -68,7 +68,9 @@ def issue_body(g: dict, new: str, d: dict, flags: list, patch: str) -> str:
         fence(f"python3 scripts/generals.py diff --id {g['id']} --to {new}\n"
               f"# have a fresh reviewer agent read the patch as data (references/vetting.md), then if you accept it:\n"
               f"python3 scripts/generals.py approve --id {g['id']} --commit {new} --by \"<your name>\" --note \"<what you checked>\"\n"
-              f"git commit -am \"Pin {g['id']} to {new[:12]}\" && git push", "bash"),
+              f"git switch -c pin-{g['id']}-{new[:12]}\n"
+              f"git commit -am \"Pin {g['id']} to {new[:12]}\"\n"
+              f"git push -u origin pin-{g['id']}-{new[:12]}   # main is protected: merge through a pull request", "bash"),
         "",
         "### Changed files",
         fence("\n".join([f"A {f}" for f in d["added"]] + [f"M {f}" for f in d["modified"]] + [f"D {f}" for f in d["removed"]]) or "(none)"),
