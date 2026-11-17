@@ -1,0 +1,7 @@
+owner: "Eval Owner"
+authorization: "I own this code and authorise this review."
+target: {repo: ".", ref: HEAD}
+campaign: follow-up
+in_scope: {hosts: []}
+lab: {never_touch: [devserver3, staging.example.com]}
+poc_policy: {allowed: false}

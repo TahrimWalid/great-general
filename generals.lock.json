@@ -1,0 +1,279 @@
+{
+  "version": 1,
+  "note": "Pinned generals. Change only via generals.py diff -> review -> approve.",
+  "generals": [
+    {
+      "id": "anthropic-security-review",
+      "provider": "Anthropic",
+      "kind": "command",
+      "license": "MIT",
+      "repo": "https://github.com/anthropics/claude-code-security-review",
+      "branch": "main",
+      "commit": "0c6a49f1fa56a1d472575da86a94dbc1edb78eda",
+      "paths": [
+        ".claude/commands/security-review.md",
+        "LICENSE",
+        "README.md",
+        "docs"
+      ],
+      "install": {
+        "type": "command",
+        "from": ".claude/commands/security-review.md",
+        "name": "commands"
+      },
+      "role": "Fast review of pending changes / a PR: high-confidence, diff-only findings",
+      "use_for": [
+        "pr",
+        "pre-commit",
+        "diff"
+      ]
+    },
+    {
+      "id": "cloudflare-security-audit",
+      "provider": "Cloudflare",
+      "kind": "skill",
+      "license": "MIT",
+      "repo": "https://github.com/cloudflare/security-audit-skill",
+      "branch": "main",
+      "commit": "c1c8a8c1471069fb0e188eeaff69b8e8db6564a8",
+      "paths": [
+        "skills/security-audit",
+        "LICENSE",
+        "README.md"
+      ],
+      "install": {
+        "type": "skill",
+        "from": "skills/security-audit",
+        "name": "security-audit"
+      },
+      "role": "Full six-phase audit: recon, coverage ledger, hunters per class, disproving verifiers, findings.json",
+      "use_for": [
+        "full-audit",
+        "release",
+        "scoped-audit"
+      ]
+    },
+    {
+      "id": "tob-fp-check",
+      "provider": "Trail of Bits",
+      "kind": "plugin",
+      "license": "CC-BY-SA-4.0",
+      "repo": "https://github.com/trailofbits/skills",
+      "branch": "main",
+      "commit": "149d7b21f4067765b82e67029730b42d228ef4b4",
+      "paths": [
+        "plugins/fp-check",
+        "LICENSE"
+      ],
+      "install": {
+        "type": "plugin",
+        "from": "plugins/fp-check",
+        "name": "fp-check"
+      },
+      "role": "Decide whether a specific suspected bug is a true or false positive, with evidence",
+      "use_for": [
+        "triage"
+      ]
+    },
+    {
+      "id": "tob-variant-analysis",
+      "provider": "Trail of Bits",
+      "kind": "plugin",
+      "license": "CC-BY-SA-4.0",
+      "repo": "https://github.com/trailofbits/skills",
+      "branch": "main",
+      "commit": "149d7b21f4067765b82e67029730b42d228ef4b4",
+      "paths": [
+        "plugins/variant-analysis",
+        "LICENSE"
+      ],
+      "install": {
+        "type": "plugin",
+        "from": "plugins/variant-analysis",
+        "name": "variant-analysis"
+      },
+      "role": "After a confirmed bug: find every other instance of the same root cause",
+      "use_for": [
+        "follow-up"
+      ]
+    },
+    {
+      "id": "tob-differential-review",
+      "provider": "Trail of Bits",
+      "kind": "plugin",
+      "license": "CC-BY-SA-4.0",
+      "repo": "https://github.com/trailofbits/skills",
+      "branch": "main",
+      "commit": "149d7b21f4067765b82e67029730b42d228ef4b4",
+      "paths": [
+        "plugins/differential-review",
+        "LICENSE"
+      ],
+      "install": {
+        "type": "plugin",
+        "from": "plugins/differential-review",
+        "name": "differential-review"
+      },
+      "role": "Security review of a diff with blast radius and test coverage of changed code",
+      "use_for": [
+        "pr",
+        "diff"
+      ]
+    },
+    {
+      "id": "tob-supply-chain-risk-auditor",
+      "provider": "Trail of Bits",
+      "kind": "plugin",
+      "license": "CC-BY-SA-4.0",
+      "repo": "https://github.com/trailofbits/skills",
+      "branch": "main",
+      "commit": "149d7b21f4067765b82e67029730b42d228ef4b4",
+      "paths": [
+        "plugins/supply-chain-risk-auditor",
+        "LICENSE"
+      ],
+      "install": {
+        "type": "plugin",
+        "from": "plugins/supply-chain-risk-auditor",
+        "name": "supply-chain-risk-auditor"
+      },
+      "role": "Dependency and lockfile risk: advisories, abandoned upstreams, install scripts",
+      "use_for": [
+        "supply-chain",
+        "release"
+      ]
+    },
+    {
+      "id": "tob-agentic-actions-auditor",
+      "provider": "Trail of Bits",
+      "kind": "plugin",
+      "license": "CC-BY-SA-4.0",
+      "repo": "https://github.com/trailofbits/skills",
+      "branch": "main",
+      "commit": "149d7b21f4067765b82e67029730b42d228ef4b4",
+      "paths": [
+        "plugins/agentic-actions-auditor",
+        "LICENSE"
+      ],
+      "install": {
+        "type": "plugin",
+        "from": "plugins/agentic-actions-auditor",
+        "name": "agentic-actions-auditor"
+      },
+      "role": "GitHub Actions workflows that run AI agents: attacker-controlled input paths",
+      "use_for": [
+        "ci",
+        "release"
+      ]
+    },
+    {
+      "id": "tob-static-analysis",
+      "provider": "Trail of Bits",
+      "kind": "plugin",
+      "license": "CC-BY-SA-4.0",
+      "repo": "https://github.com/trailofbits/skills",
+      "branch": "main",
+      "commit": "149d7b21f4067765b82e67029730b42d228ef4b4",
+      "paths": [
+        "plugins/static-analysis",
+        "LICENSE"
+      ],
+      "install": {
+        "type": "plugin",
+        "from": "plugins/static-analysis",
+        "name": "static-analysis"
+      },
+      "role": "CodeQL and Semgrep scans with SARIF output",
+      "use_for": [
+        "full-audit",
+        "release",
+        "ci"
+      ]
+    },
+    {
+      "id": "tob-insecure-defaults",
+      "provider": "Trail of Bits",
+      "kind": "plugin",
+      "license": "CC-BY-SA-4.0",
+      "repo": "https://github.com/trailofbits/skills",
+      "branch": "main",
+      "commit": "149d7b21f4067765b82e67029730b42d228ef4b4",
+      "paths": [
+        "plugins/insecure-defaults",
+        "LICENSE"
+      ],
+      "install": {
+        "type": "plugin",
+        "from": "plugins/insecure-defaults",
+        "name": "insecure-defaults"
+      },
+      "role": "Fail-open settings, default credentials, debug features, weak crypto defaults",
+      "use_for": [
+        "full-audit",
+        "release"
+      ]
+    },
+    {
+      "id": "tob-sharp-edges",
+      "provider": "Trail of Bits",
+      "kind": "plugin",
+      "license": "CC-BY-SA-4.0",
+      "repo": "https://github.com/trailofbits/skills",
+      "branch": "main",
+      "commit": "149d7b21f4067765b82e67029730b42d228ef4b4",
+      "paths": [
+        "plugins/sharp-edges",
+        "LICENSE"
+      ],
+      "install": {
+        "type": "plugin",
+        "from": "plugins/sharp-edges",
+        "name": "sharp-edges"
+      },
+      "role": "Error-prone APIs and dangerous configuration designs",
+      "use_for": [
+        "design",
+        "full-audit"
+      ]
+    },
+    {
+      "id": "tob-audit-context-building",
+      "provider": "Trail of Bits",
+      "kind": "plugin",
+      "license": "CC-BY-SA-4.0",
+      "repo": "https://github.com/trailofbits/skills",
+      "branch": "main",
+      "commit": "149d7b21f4067765b82e67029730b42d228ef4b4",
+      "paths": [
+        "plugins/audit-context-building",
+        "LICENSE"
+      ],
+      "install": {
+        "type": "plugin",
+        "from": "plugins/audit-context-building",
+        "name": "audit-context-building"
+      },
+      "role": "Deep architectural context before hunting in unfamiliar code",
+      "use_for": [
+        "full-audit"
+      ]
+    },
+    {
+      "id": "claude-security",
+      "provider": "Anthropic",
+      "kind": "product",
+      "license": "proprietary (Claude Enterprise)",
+      "repo": null,
+      "commit": "",
+      "paths": [],
+      "role": "Managed whole-codebase and scheduled scans with validated findings (Claude Enterprise, public beta)",
+      "use_for": [
+        "full-audit",
+        "scheduled"
+      ],
+      "install": {
+        "type": "product"
+      }
+    }
+  ]
+}

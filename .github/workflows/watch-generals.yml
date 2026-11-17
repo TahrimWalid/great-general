@@ -1,0 +1,27 @@
+name: Watch generals for upstream updates
+
+on:
+  schedule:
+    - cron: "17 5 * * *"   # daily, 05:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: watch-generals
+  cancel-in-progress: false
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          persist-credentials: false
+      - name: Diff changed generals and open issues
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/watch_generals.py --lock generals.lock.json --cache "$RUNNER_TEMP/gg-cache" --open-issues

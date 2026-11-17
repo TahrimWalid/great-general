@@ -1,0 +1,10 @@
+owner: "Eval Owner"
+authorization: "I own this code and authorise this review."
+target: {repo: "__PWD__/tasknest", worktree: "__PWD__/tasknest", ref: HEAD, focus: [tasknest.py]}
+campaign: full-audit
+profile: quick
+budget: {max_agent_invocations: 40}
+previous_reviews: ["__PWD__/prior.jsonl"]
+in_scope: {hosts: []}
+lab: {never_touch: [devserver3]}
+poc_policy: {allowed: false}

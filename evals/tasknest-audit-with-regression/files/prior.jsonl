@@ -1,0 +1,1 @@
+{"id": "OCT-03", "title": "Unauthenticated task export", "verdict": "confirmed", "disposition": "fixed", "category": "missing_auth", "locations": [{"file": "tasknest.py", "line": 140}]}

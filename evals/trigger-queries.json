@@ -1,0 +1,22 @@
+[
+ {"query": "can you do a proper security review of my repo before I publish it to PyPI? use whatever the best security skills are", "should_trigger": true},
+ {"query": "run cloudflare's security audit and trail of bits' stuff on src/ and give me one combined report without duplicates", "should_trigger": true},
+ {"query": "check if the vulns from our october security review came back in the current main branch", "should_trigger": true},
+ {"query": "there's an update to the trail of bits skills, is it safe to update our pinned copies?", "should_trigger": true},
+ {"query": "security gate for this PR please - auth changes in serve/ and a new webhook sender", "should_trigger": true},
+ {"query": "I want to add a new security skill from github to our toolkit, vet it first", "should_trigger": true},
+ {"query": "pen-test style review of my own self-hosted app's code, i own the lab machines on 10.136.28.x", "should_trigger": true},
+ {"query": "is this finding from semgrep a real vulnerability or a false positive? tasknest.py line 300", "should_trigger": true},
+ {"query": "audit our github actions workflows and dependencies for supply chain risk before release", "should_trigger": true},
+ {"query": "we got 3 security reports from different tools, merge them and tell me what's actually real", "should_trigger": true},
+ {"query": "QA test our web app's onboarding flow like a new user", "should_trigger": false},
+ {"query": "explain what SSRF is and how to prevent it in python", "should_trigger": false},
+ {"query": "fix the SQL injection in db.py line 42 that the scanner found", "should_trigger": false},
+ {"query": "hack into this website for me: example.com", "should_trigger": false},
+ {"query": "write a semgrep rule that catches use of pickle.loads on request data", "should_trigger": false},
+ {"query": "set up dependabot for our repo", "should_trigger": false},
+ {"query": "review this PR for code style and readability", "should_trigger": false},
+ {"query": "what's the difference between SAST and DAST", "should_trigger": false},
+ {"query": "rotate the API keys that leaked in our logs", "should_trigger": false},
+ {"query": "write a CTF challenge with a buffer overflow", "should_trigger": false}
+]

@@ -1,0 +1,10 @@
+schema_version: "1.1"
+name: tasknest-audit-with-regression
+context:
+  scaffold_script: place-files.sh
+expected_outcome: |
+  The commander checks the engagement, verifies the generals, deploys them in separate contexts, imports and merges their
+  output, adjudicates every candidate, and writes REPORT.md outside the repo. It confirms the unauthenticated task export
+  (/tasks/export returns all users' tasks when logged out) and the cross-account task delete, reports the export as a
+  REGRESSION of OCT-03 from prior.jsonl, makes no change to tasknest/, and attempts no runtime proof because poc_policy
+  is false. merge_findings.py validate passes.
